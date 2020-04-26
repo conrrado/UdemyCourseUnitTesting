@@ -25,6 +25,16 @@ public class IntervalsOverlapDetectorTest {
         Assert.assertThat(result, is(false));
     }
 
+    // interval 1 is after interval 2
+
+    @Test
+    public void isOverlap_interval1AfterInterval2_falseReturned() throws Exception {
+        Interval interval1 = new Interval(-1, 5);
+        Interval interval2 = new Interval(-10, -3);
+        boolean result = intervalsOverlapDetector.isOverlap(interval1, interval2);
+        Assert.assertThat(result, is(false));
+    }
+
     // interval 1 opverlaps interval 2 on start
 
     @Test
@@ -63,16 +73,6 @@ public class IntervalsOverlapDetectorTest {
         Interval interval2 = new Interval(-4, 4);
         boolean result = intervalsOverlapDetector.isOverlap(interval1, interval2);
         Assert.assertThat(result, is(true));
-    }
-
-    // interval 1 is after interval 2
-
-    @Test
-    public void isOverlap_interval1AfterInterval2_falseReturned() throws Exception {
-        Interval interval1 = new Interval(-1, 5);
-        Interval interval2 = new Interval(-10, -3);
-        boolean result = intervalsOverlapDetector.isOverlap(interval1, interval2);
-        Assert.assertThat(result, is(false));
     }
 
     @Test
