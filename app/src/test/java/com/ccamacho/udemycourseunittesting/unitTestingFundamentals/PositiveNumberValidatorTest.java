@@ -16,19 +16,19 @@ public class PositiveNumberValidatorTest {
     }
 
     @Test
-    public void testNegativeNumber() {
+    public void positive_negativeNumber_falseReturned() {
         boolean restult = positiveNumberValidator.isPositive(-1);
         Assert.assertThat(restult, is(false));
     }
 
     @Test
-    public void testZeroNumber() {
+    public void positive_zeroNumber_falseReturned() {
         boolean restult = positiveNumberValidator.isPositive(0);
         Assert.assertThat(restult, is(false));
     }
 
     @Test
-    public void testPositiveNumber() {
+    public void positive_positiveNumber_trueReturned() {
         boolean result = positiveNumberValidator.isPositive(1);
         Assert.assertThat(result, is(true));
     }
