@@ -1,12 +1,8 @@
 package com.ccamacho.udemycourseunittesting.testDoublesFundamentals;
 
-import com.ccamacho.udemycourseunittesting.testDoublesFundamentals.model.UserProfile;
 import com.ccamacho.udemycourseunittesting.testDoublesFundamentals.networking.NetworkErrorException;
 import com.ccamacho.udemycourseunittesting.testDoublesFundamentals.networking.UserProfileHttpEndpointSync;
 import com.ccamacho.udemycourseunittesting.testDoublesFundamentals.users.UsersCache;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class FetchUserProfileUseCaseSync {
 
