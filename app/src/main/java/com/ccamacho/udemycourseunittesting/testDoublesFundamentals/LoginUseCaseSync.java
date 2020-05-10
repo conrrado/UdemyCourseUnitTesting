@@ -34,9 +34,8 @@ public class LoginUseCaseSync {
             return UseCaseResult.NETWORK_ERROR;
         }
 
-        mAuthTokenCache.cacheAuthToken(endpointEndpointResult.getAuthToken());
-
         if (isSuccessfulEndpointResult(endpointEndpointResult)) {
+            mAuthTokenCache.cacheAuthToken(endpointEndpointResult.getAuthToken());
             mEventBusPoster.postEvent(new LoggedInEvent());
             return UseCaseResult.SUCCESS;
         }

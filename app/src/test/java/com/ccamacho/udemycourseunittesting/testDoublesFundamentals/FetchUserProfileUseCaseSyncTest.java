@@ -107,5 +107,10 @@ public class FetchUserProfileUseCaseSyncTest {
         public UserProfile getUserProfile() {
             return mUserProfile;
         }
+
+        @Override
+        public void updateUsername(String userId, String username) {
+
+        }
     }
 }

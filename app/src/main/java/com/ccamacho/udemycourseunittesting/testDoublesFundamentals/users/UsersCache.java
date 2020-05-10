@@ -7,4 +7,7 @@ public interface UsersCache {
     void setUserProfile(UserProfile userProfile);
 
     UserProfile getUserProfile();
+
+    void updateUsername(String userId, String username);
+
 }
