@@ -9,7 +9,10 @@ import com.ccamacho.udemycourseunittesting.testDoublesFundamentals.networking.Ne
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
@@ -24,14 +27,20 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
+@RunWith(MockitoJUnitRunner.class)
 public class LoginUseCaseSyncTest {
 
     private static final String USERNAME = "username";
     private static final String PASSWORD = "password";
     private static final String AUTH_TOKEN = "authToken";
 
+    @Mock
     LoginHttpEndpointSync mLoginHttpEndpointSyncMock;
+
+    @Mock
     AuthTokenCache mAuthTokenCacheMock;
+
+    @Mock
     EventBusPoster mEventBusPosterMock;
 
     LoginUseCaseSync loginTest;
@@ -39,9 +48,6 @@ public class LoginUseCaseSyncTest {
 
     @Before
     public void setup() throws Exception {
-        mLoginHttpEndpointSyncMock = mock(LoginHttpEndpointSync.class);
-        mAuthTokenCacheMock = mock(AuthTokenCache.class);
-        mEventBusPosterMock = mock(EventBusPoster.class);
         loginTest = new LoginUseCaseSync(mLoginHttpEndpointSyncMock, mAuthTokenCacheMock, mEventBusPosterMock);
         success();
     }
