@@ -14,6 +14,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import static com.ccamacho.udemycourseunittesting.testdrivendevelopment.networking.AddToCartHttpEndpointSync.EndpointResult.AUTH_ERROR;
 import static com.ccamacho.udemycourseunittesting.testdrivendevelopment.networking.AddToCartHttpEndpointSync.EndpointResult.GENERAL_ERROR;
+import static com.ccamacho.udemycourseunittesting.testdrivendevelopment.networking.AddToCartHttpEndpointSync.EndpointResult.SUCCESS;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.ArgumentMatchers.any;
@@ -34,6 +35,11 @@ public class AddToCartUseCaseSyncTest {
     @Before
     public void setup() throws Exception {
         addToCartTest = new AddToCartUseCaseSync(addToCartHttpEndpointSyncMock);
+        success();
+    }
+
+    private void success() throws NetworkErrorException {
+        when(addToCartHttpEndpointSyncMock.addToCartSync(any(CartItemScheme.class))).thenReturn(SUCCESS);
     }
 
     // correct parameters passed to the endpoint
